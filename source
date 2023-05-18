@@ -1,0 +1,23 @@
+void BubbleSort(SqList &L)  //冒泡排序
+{
+    int t; 
+	int m,flag;
+	m=L.length-1;flag=1;
+	while((m>0)&&(flag==1))
+	{
+	           flag=0; 
+        for (int j = 1; j <=m; j++) //由于定义了一个RecordList *l，所以使用->表所属
+        {
+            if (L.r[j].key >L.r[j + 1].key)
+            {
+            	flag=1;
+               t = L.r[j].key;                    //交换顺序
+                L.r[j].key = L.r[j + 1].key;
+                L.r[j + 1].key = t;
+            }
+            --m;
+        }
+    
+    }
+      PrintList(L);
+}
